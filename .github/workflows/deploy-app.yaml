@@ -28,14 +28,14 @@ jobs:
           tags: ghcr.io/mutantNeko/fastapi-app:latest
           cache-from: type=registry,ref=ghcr.io/mutantNeko/fastapi-app:cache
           cache-to: type=registry,mode=max,ref=ghcr.io/mutantNeko/fastapi-app:cache,image-manifest=true
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ubuntu
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            docker login ghcr.io -u mutantNeko -p ${{ secrets.GH_TOKEN }}
-            docker compose pull fastapi-app
-            docker compose up --force-recreate --build -d fastapi-app
-            docker system prune -a -f
+      # - name: executing remote ssh commands using password
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ubuntu
+      #     key: ${{ secrets.SSH_KEY }}
+      #     script: |
+      #       docker login ghcr.io -u mutantNeko -p ${{ secrets.GH_TOKEN }}
+      #       docker compose pull fastapi-app
+      #       docker compose up --force-recreate --build -d fastapi-app
+      #       docker system prune -a -f
