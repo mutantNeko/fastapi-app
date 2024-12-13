@@ -35,7 +35,7 @@ jobs:
       #     username: ubuntu
       #     key: ${{ secrets.SSH_KEY }}
       #     script: |
-      #       docker login ghcr.io -u mutantNeko -p ${{ secrets.GHCR_TOKEN }}
+      #       docker login ghcr.io -u mutantNeko -p ${{ secrets.GH_TOKEN }}
       #       docker compose pull fastapi-app
       #       docker compose up --force-recreate --build -d fastapi-app
       #       docker system prune -a -f
