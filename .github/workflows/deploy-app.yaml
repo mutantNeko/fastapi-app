@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/mutantNeko/fastapi-app:latest
+          tags: ghcr.io/mutantneko/fastapi-app:latest
           cache-from: type=registry,ref=ghcr.io/mutantneko/fastapi-app:cache
           cache-to: type=registry,mode=max,ref=ghcr.io/mutantneko/fastapi-app:cache,image-manifest=true
       # - name: executing remote ssh commands using password
